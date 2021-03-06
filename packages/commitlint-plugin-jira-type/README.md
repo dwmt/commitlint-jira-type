@@ -25,17 +25,12 @@ If you want to lint your commits with jira-type, follow along:
        extends: ['jira-type'],
      }
      ~~~~
-  1. Setup [Husky](https://github.com/typicode/husky/)
+  1. Setup [Husky](https://github.com/typicode/husky/): to lint commits before they are created you can use Husky's `commit-msg` hook
      ~~~~JSON
-     // package.json
-     {
-       "husky": {
-         "hooks": {
-           "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-         }
-       }
-     }
+     npx husky add .husky/commit-msg "npx --no-install commitlint --edit $1"
      ~~~~
+
+You can find detailed instructions regarding the local setup of Commitlint and Husky at [Commitlint Local Setup](https://commitlint.js.org/#/guides-local-setup).
 
 ## Further Information
 
