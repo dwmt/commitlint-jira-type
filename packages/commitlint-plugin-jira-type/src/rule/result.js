@@ -1,4 +1,8 @@
 module.exports = {
+  NotMyJob () {
+    return [true]
+  },
+
   Success () {
     return [true]
   },
