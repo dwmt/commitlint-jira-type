@@ -4,7 +4,7 @@ const { parseCommitMessage } = require('../parser')
 const rules = (function loadRules () {
   const result = {};
 
-  ['projectKeyCase', 'projectKeySeparator', 'projectKeyEnum', 'projectKeyAlphanumeric', 'taskNumberNumeric', 'taskIdEmpty', 'typeCase', 'typeEmpty', 'typeEnum', 'typeSeparator', 'commitMessageSeparator']
+  ['projectKeyCase', 'projectKeySeparator', 'projectKeyEnum', 'projectKeyAlphanumeric', 'taskNumberNumeric', 'taskIdEmpty', 'typeCase', 'typeEmpty', 'typeEnum', 'typeSeparator', 'commitMessageSeparator', 'messageEmpty']
     .map(p => `./rules/${p}.js`)
     .map(require)
     .forEach(ruleObject => {

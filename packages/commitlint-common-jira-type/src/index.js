@@ -14,7 +14,9 @@ const RULES = {
   typeEmpty: 'jira-type-type-empty',
   typeEnum: 'jira-type-type-enum',
 
-  commitMessageSeparator: 'jira-type-commit-message-separator'
+  commitMessageSeparator: 'jira-type-commit-message-separator',
+
+  messageEmpty: 'jira-type-message-empty'
 }
 
 const VALUES = {
