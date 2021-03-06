@@ -13,9 +13,9 @@ KEY-729/fix: removed erroneous handling of a key
 
 If you want to lint your commits with jira-type, follow along:
 
-  1. Install the jira-type dependencies
+  1. Install Commitlint, Husky and the jira-type dependencies
      ~~~~
-     npm i commitlint-plugin-jira-type commitlint-config-jira-type -D
+     npm i @commitlint/cli husky commitlint-plugin-jira-type commitlint-config-jira-type -D
      ~~~~
   1. Configure [commitlint](https://github.com/conventional-changelog/commitlint)
      ~~~~JavaScript
