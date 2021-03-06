@@ -3,8 +3,8 @@ const { parser, rules, checkCase, Success, Failure } = require('../common')
 module.exports = {
   name: rules.names.projectKeyCase,
   rule (parsed, _when, value = rules.defaultValues.projectKeyCase) {
-    if (!parsed.projectKey) {
-      return Failure('Could not identify the project key in the commit message.')
+    if (!parsed.taskIdAndType || parsed.hasError(parser.errors.invalidTaskIdAndType)) {
+      return Failure('The task identifier and type cannot be located or they are malformed.')
     }
 
     if (parsed.hasError(parser.errors.invalidProjectKey)) {
