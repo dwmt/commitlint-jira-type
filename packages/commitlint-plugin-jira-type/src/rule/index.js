@@ -18,10 +18,6 @@ function wrapRule (ruleFn) {
   return function wrappedRule (commitlintParsed, when, value) {
     const ownParsed = parseCommitMessage(commitlintParsed.raw)
 
-    if (ownParsed.hasError(parser.errors.emptyMessage)) {
-      return Failure('The commit message must not be empty.')
-    }
-
     return ruleFn(ownParsed, when, value)
   }
 }
