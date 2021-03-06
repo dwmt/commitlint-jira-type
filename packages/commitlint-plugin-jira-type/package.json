@@ -1,14 +1,19 @@
 {
   "name": "commitlint-plugin-jira-type",
   "version": "1.0.0",
-  "description": "",
+  "description": "Check if your commit messages start with a JIRA ticket identifier and a type.",
   "main": "src/index.js",
   "scripts": {
     "lint": "standard",
     "lint:fix": "standard --fix",
     "test": "jest"
   },
-  "keywords": [],
+  "keywords": [
+    "commitlint",
+    "jira",
+    "commitlint-config",
+    "commitlint-plugin"
+  ],
   "author": "DWMT",
   "license": "MIT",
   "dependencies": {
@@ -17,5 +22,8 @@
   "devDependencies": {
     "jest": "26.6.3",
     "standard": "16.0.3"
+  },
+  "peerDependencies": {
+    "@commitlint/lint": ">=7.6.0"
   }
 }

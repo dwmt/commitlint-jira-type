@@ -1,13 +1,18 @@
 {
   "name": "commitlint-common-jira-type",
   "version": "1.0.0",
-  "description": "",
+  "description": "Shared definitions for the jira-type commitlint packages.",
   "main": "src/index.js",
   "scripts": {
     "lint": "standard",
     "lint:fix": "standard --fix"
   },
-  "keywords": [],
+  "keywords": [
+    "commitlint",
+    "jira",
+    "commitlint-config",
+    "commitlint-plugin"
+  ],
   "author": "DWMT",
   "license": "MIT",
   "devDependencies": {
