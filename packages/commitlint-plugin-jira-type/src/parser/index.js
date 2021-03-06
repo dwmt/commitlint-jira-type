@@ -2,7 +2,10 @@ const common = require('commitlint-common-jira-type')
 
 function parseCommitMessage (message) {
   const output = {
-    errors: []
+    errors: [],
+    hasError (error) {
+      return this.errors.includes(error)
+    }
   }
 
   if (isEmpty(message)) {
