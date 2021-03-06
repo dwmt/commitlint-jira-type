@@ -1,58 +1,51 @@
 const common = require('commitlint-common-jira-type')
 
 function parseCommitMessage (message) {
-  const errors = []
+  const output = {
+    errors: []
+  }
+
   if (isEmpty(message)) {
-    errors.push(ERRORS.emptyMessage)
-    return { errors }
+    output.errors.push(ERRORS.emptyMessage)
+    return output
   }
 
   const header = message.split('\n')[0]
 
   const headerParts = header.split(common.DEFAULTS.commitMessageSeparator)
   if (headerParts.length < 2) {
-    errors.push(ERRORS.missingCommitSeparator)
-    return { errors }
+    output.errors.push(ERRORS.missingCommitSeparator)
+    return output
   }
 
-  const taskIdAndType = headerParts[0]
-  if (isEmpty(taskIdAndType)) {
-    errors.push(ERRORS.missingTaskIdAndType)
-    return { errors }
+  output.taskIdAndType = headerParts[0]
+  if (isEmpty(output.taskIdAndType)) {
+    output.errors.push(ERRORS.missingTaskIdAndType)
+    return output
   }
 
-  const taskIdAndTypeParts = taskIdAndType.split(common.DEFAULTS.typeSeparator)
+  const taskIdAndTypeParts = output.taskIdAndType.split(common.DEFAULTS.typeSeparator)
   if (taskIdAndTypeParts.length !== 2) {
-    errors.push(ERRORS.invalidTaskIdAndType)
-    return {
-      errors,
-      taskIdAndType
-    }
+    output.errors.push(ERRORS.invalidTaskIdAndType)
+    return output
   }
 
-  const [taskId, type] = taskIdAndTypeParts
+  output.taskId = taskIdAndTypeParts[0]
+  output.type = taskIdAndTypeParts[1]
 
-  const taskIdParts = taskId.split(common.DEFAULTS.projectKeySeparator)
+  const taskIdParts = output.taskId.split(common.DEFAULTS.projectKeySeparator)
   if (taskIdParts.length !== 2) {
-    errors.push(ERRORS.invalidTaskId)
-    return {
-      errors,
-      taskId,
-      taskIdAndType
-    }
+    output.errors.push(ERRORS.invalidTaskId)
+    return output
   }
 
-  const [projectKey, taskNumber] = taskIdParts
+  output.projectKey = taskIdParts[0]
+  output.taskNumber = taskIdParts[1]
 
-  validateProjectKey(projectKey, errors)
-  validateTaskNumber(taskNumber, errors)
+  validateProjectKey(output.projectKey, output.errors)
+  validateTaskNumber(output.taskNumber, output.errors)
 
-  return {
-    errors,
-    type,
-    projectKey,
-    taskNumber
-  }
+  return output
 }
 
 function isEmpty (str) {
@@ -62,8 +55,6 @@ function isEmpty (str) {
 const PROJECT_KEY_PATTERN = /^[a-zA-Z0-9]+$/
 
 function validateProjectKey (projectKey, errors) {
-  console.log(PROJECT_KEY_PATTERN.test(projectKey))
-
   if (!PROJECT_KEY_PATTERN.test(projectKey)) {
     errors.push(ERRORS.invalidProjectKey)
   }
