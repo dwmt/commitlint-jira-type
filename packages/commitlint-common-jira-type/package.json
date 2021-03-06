@@ -1,0 +1,16 @@
+{
+  "name": "commitlint-common-jira-type",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "lint": "standard",
+    "lint:fix": "standard --fix"
+  },
+  "keywords": [],
+  "author": "DWMT",
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "16.0.3"
+  }
+}
