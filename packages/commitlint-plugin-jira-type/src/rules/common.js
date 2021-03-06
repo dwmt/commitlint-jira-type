@@ -12,21 +12,21 @@ function Failure (message) {
 
 function checkCase (value, expectedCase) {
   switch (expectedCase) {
-    case [VALUES.any]: return true
-    case [VALUES.lowercase]: return value.toLowerCase() === value
-    case [VALUES.uppercase]: return value.toUpperCase() === value
+    case VALUES.any: return true
+    case VALUES.lowercase: return value.toLowerCase() === value
+    case VALUES.uppercase: return value.toUpperCase() === value
   }
 }
 
 function wrap (ruleFn) {
-  return function wrappedRule (rawMessage, when, value) {
-    const parsed = parseCommitMessage(rawMessage)
+  return function wrappedRule (commitlintParsed, when, value) {
+    const ownParsed = parseCommitMessage(commitlintParsed.raw)
 
-    if (parsed.hasError(ERRORS.emptyMessage)) {
+    if (ownParsed.hasError(ERRORS.emptyMessage)) {
       return Failure('The commit message must not be empty.')
     }
 
-    return ruleFn(parsed, when, value)
+    return ruleFn(ownParsed, when, value)
   }
 }
 
