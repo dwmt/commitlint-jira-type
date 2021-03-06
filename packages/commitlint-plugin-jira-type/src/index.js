@@ -1,9 +1,5 @@
-const { RULES } = require('commitlint-common-jira-type')
-
-const { wrap } = require('./rules/common')
+const { rules } = require('./rule')
 
 module.exports = {
-  rules: {
-    [RULES.projectKeyCase]: wrap(require('./rules/projectKeyCase'))
-  }
+  rules
 }
