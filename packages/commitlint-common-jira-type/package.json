@@ -1,6 +1,6 @@
 {
   "name": "commitlint-common-jira-type",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Shared definitions for the jira-type commitlint packages.",
   "main": "src/index.js",
   "scripts": {
