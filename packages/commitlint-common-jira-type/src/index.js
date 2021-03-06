@@ -9,6 +9,8 @@ const RULES = {
 
   taskIdEmpty: 'jira-type-task-id-empty',
 
+  taskIdAndTypeEmpty: 'jira-type-task-id-and-type-empty',
+
   typeCase: 'jira-type-type-empty',
   typeSeparator: 'jira-type-type-separator',
   typeEmpty: 'jira-type-type-empty',
