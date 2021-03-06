@@ -2,9 +2,10 @@ const RULES = {
   projectKeyCase: 'jira-type-project-key-case',
   projectKeySeparator: 'jira-type-project-key-separator',
   projectKeyEnum: 'jira-type-project-key-enum',
-  projectKeyEmpty: 'jira-type-project-key-empty',
+  projectKeyAlphanumeric: 'jira-type-project-key-alphanumeric',
 
   taskNumberEmpty: 'jira-type-task-number-empty',
+  taskNumberNumeric: 'jira-type-task-number-numeric',
 
   taskIdEmpty: 'jira-type-task-id-empty',
 
