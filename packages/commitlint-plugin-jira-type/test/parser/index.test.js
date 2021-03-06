@@ -2,31 +2,6 @@
 
 const { parseCommitMessage, ERRORS } = require('../../src/parser')
 
-function errorOnlyTestCase ({ name, message, expectedErrors }) {
-  test(name, () => {
-    // When
-    const actual = parseCommitMessage(message)
-
-    // Then
-    expect(actual.errors).toStrictEqual(expectedErrors)
-  })
-}
-
-function testCase ({ name, message, expected }) {
-  test(name, () => {
-    // When
-    const actual = parseCommitMessage(message)
-
-    // Then
-    expect(actual.errors).toStrictEqual(expected.errors || [])
-    expect(actual.taskIdAndType).toBe(expected.taskIdAndType)
-    expect(actual.taskId).toBe(expected.taskId)
-    expect(actual.projectKey).toBe(expected.projectKey)
-    expect(actual.taskNumber).toBe(expected.taskNumber)
-    expect(actual.type).toBe(expected.type)
-  })
-}
-
 describe('commit message parser', () => {
   describe('should return empty meessage error', () => {
     errorOnlyTestCase({
@@ -206,3 +181,28 @@ describe('commit message parser', () => {
     })
   })
 })
+
+function errorOnlyTestCase ({ name, message, expectedErrors }) {
+  test(name, () => {
+    // When
+    const actual = parseCommitMessage(message)
+
+    // Then
+    expect(actual.errors).toStrictEqual(expectedErrors)
+  })
+}
+
+function testCase ({ name, message, expected }) {
+  test(name, () => {
+    // When
+    const actual = parseCommitMessage(message)
+
+    // Then
+    expect(actual.errors).toStrictEqual(expected.errors || [])
+    expect(actual.taskIdAndType).toBe(expected.taskIdAndType)
+    expect(actual.taskId).toBe(expected.taskId)
+    expect(actual.projectKey).toBe(expected.projectKey)
+    expect(actual.taskNumber).toBe(expected.taskNumber)
+    expect(actual.type).toBe(expected.type)
+  })
+}
