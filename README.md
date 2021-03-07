@@ -1,7 +1,7 @@
 # Commitlint Jira Type
 
 [![Continuous Integration](https://github.com/dwmt/commitlint-jira-type/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/dwmt/commitlint-jira-type/actions/workflows/continuous-integration.yml)
-[![npm](https://img.shields.io/npm/v/commitlint-plugin-jira-type)](https://www.npmjs.com/package/commitlint-plugin-jira-type)
+[![npm](https://img.shields.io/npm/v/dwmt/commitlint-plugin-jira-type)](https://www.npmjs.com/package/@dwmt/commitlint-plugin-jira-type)
 [![LICENSE](https://img.shields.io/github/license/dwmt/commitlint-jira-type)](LICENSE)
 
 Check if your commit messages start with a JIRA ticket identifier and a type.
@@ -19,13 +19,13 @@ If you want to lint your commits with jira-type, follow along:
 
   1. Install Commitlint, Husky and the jira-type dependencies
      ~~~~
-     npm i @commitlint/cli husky commitlint-plugin-jira-type commitlint-config-jira-type -D
+     npm i @commitlint/cli husky @dwmt/commitlint-plugin-jira-type @dwmt/commitlint-config-jira-type -D
      ~~~~
   1. Configure [commitlint](https://github.com/conventional-changelog/commitlint)
      ~~~~JavaScript
      // commitlint.config.js
      module.exports = {
-       plugins: ['commitlint-plugin-jira-type'],
+       plugins: ['@dwmt/commitlint-plugin-jira-type'],
        extends: ['jira-type'],
      }
      ~~~~
