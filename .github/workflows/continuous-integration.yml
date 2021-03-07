@@ -1,0 +1,64 @@
+name: Continuous Integration
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the Repository
+      uses: actions/checkout@v2
+      
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+        
+    - name: Install pnpm
+      run: |
+        npm i pnpm -g
+      
+    - name: Install dependencies
+      run: |
+        pnpm recursive i --ignore-scripts
+      env:
+        CI: true
+    
+    - name: Run rebuild
+      run: |
+        pnpm recursive rebuild
+
+    - name: Lint
+      run: |
+        pnpm recursive run lint
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout the Repository
+      uses: actions/checkout@v2
+      
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+        
+    - name: Install pnpm
+      run: |
+        npm i pnpm -g
+      
+    - name: Install dependencies
+      run: |
+        pnpm recursive i --ignore-scripts
+      env:
+        CI: true
+    
+    - name: Run rebuild
+      run: |
+        pnpm recursive rebuild
+
+    - name: Lint
+      run: |
+        pnpm recursive test
