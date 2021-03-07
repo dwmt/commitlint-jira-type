@@ -1,5 +1,9 @@
 # Commitlint Jira Type
 
+[![Continuous Integration](https://github.com/dwmt/commitlint-jira-type/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/dwmt/commitlint-jira-type/actions/workflows/continuous-integration.yml)
+[![npm](https://img.shields.io/npm/v/commitlint-plugin-jira-type)](https://www.npmjs.com/package/commitlint-plugin-jira-type)
+[![LICENSE](https://img.shields.io/github/license/dwmt/commitlint-jira-type)](LICENSE)
+
 Check if your commit messages start with a JIRA ticket identifier and a type.
 
 Accepts commit messages like:
