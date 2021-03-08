@@ -1,4 +1,4 @@
-const { VALUES } = require('commitlint-common-jira-type')
+const { VALUES } = require('@dwmt/commitlint-common-jira-type')
 
 module.exports = function checkCase (value, expectedCase) {
   switch (expectedCase) {

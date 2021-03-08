@@ -1,4 +1,4 @@
-const common = require('commitlint-common-jira-type')
+const common = require('@dwmt/commitlint-common-jira-type')
 
 function parseCommitMessage (message) {
   const output = {

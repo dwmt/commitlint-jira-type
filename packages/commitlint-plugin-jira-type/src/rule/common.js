@@ -1,4 +1,4 @@
-const { DEFAULTS, RULES } = require('commitlint-common-jira-type')
+const { DEFAULTS, RULES } = require('@dwmt/commitlint-common-jira-type')
 
 const checkCase = require('./checkCase')
 const wrap = require('./wrap')

@@ -1,4 +1,4 @@
-const { RULES, DEFAULTS, LEVEL, APPLICABLE } = require('commitlint-common-jira-type')
+const { RULES, DEFAULTS, LEVEL, APPLICABLE } = require('@dwmt/commitlint-common-jira-type')
 
 module.exports = {
   rules: {
