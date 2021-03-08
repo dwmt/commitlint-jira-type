@@ -1,6 +1,6 @@
 {
   "name": "@dwmt/commitlint-common-jira-type",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Shared definitions for the jira-type commitlint packages.",
   "main": "src/index.js",
   "scripts": {
