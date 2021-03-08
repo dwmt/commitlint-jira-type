@@ -16,7 +16,7 @@ If you want to accept `PROJECTA` and `PROJECTB` only:
 // commitlint.config.js
 module.exports = {
   plugins: ['@dwmt/commitlint-plugin-jira-type'],
-  extends: ['jira-type'],
+  extends: ['@dwmt/commitlint-config-jira-type'],
   rules: {
      // 2 sets the level of this rule to error.
      // always means that this rule should be applied as is
@@ -36,7 +36,7 @@ If you want to accept `feat` and `fix` only:
 // commitlint.config.js
 module.exports = {
   plugins: ['@dwmt/commitlint-plugin-jira-type'],
-  extends: ['jira-type'],
+  extends: ['@dwmt/commitlint-config-jira-type'],
   rules: {
      // 2 sets the level of this rule to error.
      // always means that this rule should be applied as is

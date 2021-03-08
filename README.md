@@ -29,7 +29,7 @@ If you want to lint your commits with jira-type, follow along:
        extends: ['jira-type'],
      }
      ~~~~
-  1. Setup [Husky](https://github.com/typicode/husky/): to lint commits before they are created you can use Husky's `commit-msg` hook
+  1. Setup [Husky](https://github.com/typicode/husky/). To lint commits before they are created you can use the `commit-msg` hook
      ~~~~
      mkdir .husky
      npx husky add .husky/commit-msg "npx --no-install commitlint --edit $1"
@@ -51,7 +51,7 @@ If you want to accept `PROJECTA` and `PROJECTB` only:
 // commitlint.config.js
 module.exports = {
   plugins: ['@dwmt/commitlint-plugin-jira-type'],
-  extends: ['jira-type'],
+  extends: ['@dwmt/commitlint-config-jira-type'],
   rules: {
      // 2 sets the level of this rule to error.
      // always means that this rule should be applied as is
@@ -71,7 +71,7 @@ If you want to accept `feat` and `fix` only:
 // commitlint.config.js
 module.exports = {
   plugins: ['@dwmt/commitlint-plugin-jira-type'],
-  extends: ['jira-type'],
+  extends: ['@dwmt/commitlint-config-jira-type'],
   rules: {
      // 2 sets the level of this rule to error.
      // always means that this rule should be applied as is

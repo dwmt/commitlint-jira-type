@@ -1,4 +1,4 @@
 module.exports = {
-    plugins: ['commitlint-plugin-jira-type'],
-    extends: ['jira-type'],
+    plugins: ['@dwmt/commitlint-plugin-jira-type'],
+    extends: ['@dwmt/commitlint-config-jira-type'],
 }
