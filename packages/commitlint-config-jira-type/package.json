@@ -16,7 +16,7 @@
   "author": "DWMT",
   "license": "MIT",
   "dependencies": {
-    "commitlint-common-jira-type": "workspace:*"
+    "@dwmt/commitlint-common-jira-type": "workspace:*"
   },
   "devDependencies": {
     "standard": "16.0.3"
