@@ -1,6 +1,6 @@
 {
   "name": "@dwmt/commitlint-config-jira-type",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Default configuration for the jira type commitlint plugin.",
   "main": "src/index.js",
   "scripts": {
