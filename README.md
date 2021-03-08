@@ -26,7 +26,7 @@ If you want to lint your commits with jira-type, follow along:
      // commitlint.config.js
      module.exports = {
        plugins: ['@dwmt/commitlint-plugin-jira-type'],
-       extends: ['jira-type'],
+       extends: ['@dwmt/commitlint-config-jira-type'],
      }
      ~~~~
   1. Setup [Husky](https://github.com/typicode/husky/). To lint commits before they are created you can use the `commit-msg` hook
